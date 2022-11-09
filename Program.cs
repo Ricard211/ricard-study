@@ -30,7 +30,16 @@ namespace ricard_study
 
             foreach(var building in bgs)
             {
-                Console.WriteLine($"{building.id} | {building.Adress} | {building.year}");
+                int calcYear1 = building.year;
+                int calcYear2;
+                int ye = 2022;
+
+                if(calcYear1 != 0)
+                {
+                    calcYear2 = ye - calcYear1;
+                }
+                else calcYear2 = 0;
+                Console.WriteLine($"{building.id} | {building.Adress} | {building.year} | Building Age: {calcYear2}");
             }
         }
     }

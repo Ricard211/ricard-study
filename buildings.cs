@@ -13,6 +13,6 @@ namespace ricard_study
         public string Adress { get; set; }
 
         [CsvColumn(Name = "build_year", FieldIndex = 11)]
-        public string year { get; set; }
+        public int year { get; set; }
     }
 }
