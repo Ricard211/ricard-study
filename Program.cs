@@ -27,6 +27,9 @@ namespace ricard_study
 
             var csvContext = new CsvContext();
             var bgs = csvContext.Read<Buildings>("apartment_buildings_2019.csv", csvFileDescription);
+            float avgsize = 0;
+            float i = 1;
+            float maxsize = 0;
 
             foreach(var building in bgs)
             {
@@ -39,8 +42,20 @@ namespace ricard_study
                     calcYear2 = ye - calcYear1;
                 }
                 else calcYear2 = 0;
-                Console.WriteLine($"{building.id} | {building.Adress} | {building.year} | Building Age: {calcYear2}");
+
+                avgsize = building.size + avgsize;
+
+                i = i + 1;
+
+                if(building.size > maxsize)
+                {
+                    maxsize = building.size;
+                }
+
+                Console.WriteLine($"{building.id} | {building.Adress} | Building Age: {calcYear2}");
             }
+
+            Console.WriteLine($"Average size: {avgsize/i} |  Max size: {maxsize}");
         }
     }
 }

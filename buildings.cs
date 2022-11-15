@@ -12,6 +12,9 @@ namespace ricard_study
         [CsvColumn(Name = "adresas", FieldIndex = 2)]
         public string Adress { get; set; }
 
+        [CsvColumn(Name = "bendr_plotas", FieldIndex = 9)]
+        public float size { get; set; }
+
         [CsvColumn(Name = "build_year", FieldIndex = 11)]
         public int year { get; set; }
     }
