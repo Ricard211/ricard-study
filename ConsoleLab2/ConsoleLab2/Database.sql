@@ -1,4 +1,5 @@
-CREATE TABLE Consoles (Name varchar(300),
+CREATE TABLE Consoles (Id serial,
+					   Name varchar(300),
 					   Creator varchar(100), 
 					   Year Int,
 					   Units varchar(30),
@@ -16,10 +17,11 @@ insert into Consoles(Name, Creator, Year, Units, Generation) values
 select * from Consoles;
 
 
-CREATE TABLE ConsoleGames (Name varchar(300),
+CREATE TABLE ConsoleGames (Id serial,
+						Name varchar(300),
 						  Developer varchar(100),
-						  Year varchar(100),
-						   Units int,
+						  Year int,
+						   Units varchar(100),
 						  Compatability varchar(100)
 						  );
 						  

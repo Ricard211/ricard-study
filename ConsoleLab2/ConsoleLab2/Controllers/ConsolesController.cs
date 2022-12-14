@@ -23,7 +23,7 @@ namespace ConsoleLab2.Controllers
         public JsonResult Get()
         {
             string query = @"
-             select Name as ""Name"",
+             select Id as ""Id"",Name as ""Name"",
 Creator as ""Creator"", Year as ""Year"", Units as ""Units"", Generation as ""Generation""
 from Consoles";
 
@@ -62,7 +62,11 @@ from Consoles";
                 myCon.Open();
                 using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@Name", cons.Name);
+                    myCommand.Parameters.AddWithValue("@Id", cons.Id);
+                    myCommand.Parameters.AddWithValue("@Creator", cons.Creator);
+                    myCommand.Parameters.AddWithValue("@Year", cons.Year);
+                    myCommand.Parameters.AddWithValue("@Units", cons.Units);
+                    myCommand.Parameters.AddWithValue("@Generation", cons.Generation);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
 
@@ -74,5 +78,69 @@ from Consoles";
             return new JsonResult("Added Succesfully");
         }
 
+        [HttpPut]
+        public JsonResult Put(Consoles cons)
+        {
+            string query = @"
+            update Consoles
+            set Name = @Name,
+            Creator = @Creator,
+            Year = @Year, 
+            Units = @Units, 
+            Generation = @Generation
+            where Id=@Id
+";
+
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("ConsoleAppCon");
+            NpgsqlDataReader myReader;
+            using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                {
+                    myCommand.Parameters.AddWithValue("@Id", cons.Id);
+                    myCommand.Parameters.AddWithValue("@Creator", cons.Creator);
+                    myCommand.Parameters.AddWithValue("@Year", cons.Year);
+                    myCommand.Parameters.AddWithValue("@Units", cons.Units);
+                    myCommand.Parameters.AddWithValue("@Generation", cons.Generation);
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult("Updated Succesfully");
+        }
+
+        [HttpDelete("{id}")]
+        public JsonResult Delete(int id)
+        {
+            string query = @"
+            delete from Consoles
+            where Id=@Id
+";
+
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("ConsoleAppCon");
+            NpgsqlDataReader myReader;
+            using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                {
+                    myCommand.Parameters.AddWithValue("@Id", id);
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult("Deleted Succesfully");
+        }
     }
 }

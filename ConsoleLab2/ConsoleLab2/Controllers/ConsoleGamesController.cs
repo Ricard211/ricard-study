@@ -23,7 +23,7 @@ namespace ConsoleLab2.Controllers
         public JsonResult Get()
         {
             string query = @"
-             select Name as ""Name"",
+             select Id as ""Id"" ,Name as ""Name"",
 Developer as ""Developer"", Year as ""Year"", Units as ""Units"", Compatability as ""Compatability""
 from ConsoleGames";
 
@@ -47,7 +47,7 @@ from ConsoleGames";
         }
 
         [HttpPost]
-        public JsonResult Post(Consoles cons)
+        public JsonResult Post(ConsoleGames consgam)
         {
             string query = @"
             insert into ConsoleGame (Name,Developer,Year,Units,Compatability)
@@ -62,7 +62,12 @@ from ConsoleGames";
                 myCon.Open();
                 using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
                 {
-                    myCommand.Parameters.AddWithValue("@Name", cons.Name);
+                    myCommand.Parameters.AddWithValue("@Id", consgam.Id);
+                    myCommand.Parameters.AddWithValue("@Name", consgam.Name);
+                    myCommand.Parameters.AddWithValue("@Developer", consgam.Developer);
+                    myCommand.Parameters.AddWithValue("@Year", consgam.Year);
+                    myCommand.Parameters.AddWithValue("@Units", consgam.Units);
+                    myCommand.Parameters.AddWithValue("@Compatability", consgam.Compatability);
                     myReader = myCommand.ExecuteReader();
                     table.Load(myReader);
 
@@ -72,6 +77,74 @@ from ConsoleGames";
             }
 
             return new JsonResult("Added Succesfully");
+        }
+
+        [HttpPut]
+        public JsonResult Put(ConsoleGames consgam)
+        {
+            string query = @"
+            update ConsoleGames
+            set Name = @Name,
+            Developer = @Developer,
+            Year = @Year, 
+            Units = @Units, 
+            Compatability = @Compatability
+            where Id=@Id
+            insert into ConsoleGame (Name,Developer,Year,Units,Compatability)
+            values (@Name,@Developer,@Year,@Units,@Compatability)
+";
+
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("ConsoleAppCon");
+            NpgsqlDataReader myReader;
+            using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                {
+                    myCommand.Parameters.AddWithValue("@Id", consgam.Id);
+                    myCommand.Parameters.AddWithValue("@Name", consgam.Name);
+                    myCommand.Parameters.AddWithValue("@Developer", consgam.Developer);
+                    myCommand.Parameters.AddWithValue("@Year", consgam.Year);
+                    myCommand.Parameters.AddWithValue("@Units", consgam.Units);
+                    myCommand.Parameters.AddWithValue("@Compatability", consgam.Compatability);
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult("Updated Succesfully");
+        }
+
+        [HttpDelete("{id}")]
+        public JsonResult Delete(int id)
+        {
+            string query = @"
+            delete from ConsoleGames
+            where Id=@Id
+";
+
+            DataTable table = new DataTable();
+            string sqlDataSource = _configuration.GetConnectionString("ConsoleAppCon");
+            NpgsqlDataReader myReader;
+            using (NpgsqlConnection myCon = new NpgsqlConnection(sqlDataSource))
+            {
+                myCon.Open();
+                using (NpgsqlCommand myCommand = new NpgsqlCommand(query, myCon))
+                {
+                    myCommand.Parameters.AddWithValue("@Id", id);
+                    myReader = myCommand.ExecuteReader();
+                    table.Load(myReader);
+
+                    myReader.Close();
+                    myCon.Close();
+                }
+            }
+
+            return new JsonResult("Deleted Succesfully");
         }
     }
 }
