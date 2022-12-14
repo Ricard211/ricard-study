@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ConsoleLab2.props" />
+</Project>

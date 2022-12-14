@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ricar\\Desktop\\ConsoleLab2\\ConsoleLab2\\ConsoleLab2.csproj": {}
+    "C:\\Users\\ricar\\Documents\\GitHub\\ricard-study\\ConsoleLab2\\ConsoleLab2\\ConsoleLab2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ricar\\Desktop\\ConsoleLab2\\ConsoleLab2\\ConsoleLab2.csproj": {
+    "C:\\Users\\ricar\\Documents\\GitHub\\ricard-study\\ConsoleLab2\\ConsoleLab2\\ConsoleLab2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ricar\\Desktop\\ConsoleLab2\\ConsoleLab2\\ConsoleLab2.csproj",
+        "projectUniqueName": "C:\\Users\\ricar\\Documents\\GitHub\\ricard-study\\ConsoleLab2\\ConsoleLab2\\ConsoleLab2.csproj",
         "projectName": "ConsoleLab2",
-        "projectPath": "C:\\Users\\ricar\\Desktop\\ConsoleLab2\\ConsoleLab2\\ConsoleLab2.csproj",
+        "projectPath": "C:\\Users\\ricar\\Documents\\GitHub\\ricard-study\\ConsoleLab2\\ConsoleLab2\\ConsoleLab2.csproj",
         "packagesPath": "C:\\Users\\ricar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ricar\\Desktop\\ConsoleLab2\\ConsoleLab2\\obj\\",
+        "outputPath": "C:\\Users\\ricar\\Documents\\GitHub\\ricard-study\\ConsoleLab2\\ConsoleLab2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -50,6 +50,10 @@
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.1, )"
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
