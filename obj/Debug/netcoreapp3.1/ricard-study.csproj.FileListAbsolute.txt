@@ -3,7 +3,6 @@
 /Users/ricard21/Documents/GitHub/ricard-study/bin/Debug/netcoreapp3.1/ricard-study.runtimeconfig.dev.json
 /Users/ricard21/Documents/GitHub/ricard-study/bin/Debug/netcoreapp3.1/ricard-study.dll
 /Users/ricard21/Documents/GitHub/ricard-study/bin/Debug/netcoreapp3.1/ricard-study.pdb
-/Users/ricard21/Documents/GitHub/ricard-study/obj/Debug/netcoreapp3.1/ricard-study.csprojAssemblyReference.cache
 /Users/ricard21/Documents/GitHub/ricard-study/obj/Debug/netcoreapp3.1/ricard-study.AssemblyInfoInputs.cache
 /Users/ricard21/Documents/GitHub/ricard-study/obj/Debug/netcoreapp3.1/ricard-study.AssemblyInfo.cs
 /Users/ricard21/Documents/GitHub/ricard-study/obj/Debug/netcoreapp3.1/ricard-study.csproj.CoreCompileInputs.cache
@@ -13,3 +12,6 @@
 /Users/ricard21/Documents/GitHub/ricard-study/bin/Debug/netcoreapp3.1/CsvHelper.dll
 /Users/ricard21/Documents/GitHub/ricard-study/obj/Debug/netcoreapp3.1/ricard-study.csproj.CopyComplete
 /Users/ricard21/Documents/GitHub/ricard-study/bin/Debug/netcoreapp3.1/LINQtoCSV.dll
+/Users/ricard21/Documents/GitHub/ricard-study/bin/Debug/netcoreapp3.1/ricard-study
+/Users/ricard21/Documents/GitHub/ricard-study/obj/Debug/netcoreapp3.1/ricard-study.csproj.AssemblyReference.cache
+/Users/ricard21/Documents/GitHub/ricard-study/obj/Debug/netcoreapp3.1/ricard-study.GeneratedMSBuildEditorConfig.editorconfig
