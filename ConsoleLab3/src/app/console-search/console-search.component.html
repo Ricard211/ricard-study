@@ -1,0 +1,12 @@
+<div id="search-component">
+  <label for="search-box">Console Search</label>
+  <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+
+  <ul class="search-result">
+    <li *ngFor="let console of consoles$ | async">
+      <a routerLink="/detail/{{ console.id }}">
+        {{ console.name }}
+      </a>
+    </li>
+  </ul>
+</div>

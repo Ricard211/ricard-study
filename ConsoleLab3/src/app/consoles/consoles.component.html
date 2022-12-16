@@ -1,0 +1,31 @@
+<h2>My consoles</h2>
+
+<div>
+  <label for="new-console">Console name: </label>
+  <input id="new-console" #consoleName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button
+    type="button"
+    class="add-button"
+    (click)="add(consoleName.value); consoleName.value = ''"
+  >
+    Add console
+  </button>
+</div>
+
+<ul class="consoles">
+  <li *ngFor="let console of consoles">
+    <a routerLink="/detail/{{ console.id }}">
+      <span class="badge">{{ console.id }}</span> {{ console.name }}
+    </a>
+    <button
+      type="button"
+      class="delete"
+      title="delete console"
+      (click)="delete(console)"
+    >
+      x
+    </button>
+  </li>
+</ul>

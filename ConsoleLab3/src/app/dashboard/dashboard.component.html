@@ -1,0 +1,6 @@
+<h2>Top Consoles</h2>
+<div class="consoles-menu">
+  <a *ngFor="let console of consoles" routerLink="/detail/{{ console.id }}">
+    {{ console.name }}
+  </a>
+</div>

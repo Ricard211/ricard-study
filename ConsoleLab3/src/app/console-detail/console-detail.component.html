@@ -1,0 +1,14 @@
+<div *ngIf="console">
+  <h2>{{ console.name | uppercase }} Details</h2>
+  <div><span>id: </span>{{ console.id }}</div>
+  <div>
+    <label for="console-name">Console name: </label>
+    <input
+      id="console-name"
+      [(ngModel)]="console.name"
+      placeholder="Console name"
+    />
+  </div>
+  <button type="button" (click)="goBack()">go back</button>
+  <button type="button" (click)="save()">save</button>
+</div>
