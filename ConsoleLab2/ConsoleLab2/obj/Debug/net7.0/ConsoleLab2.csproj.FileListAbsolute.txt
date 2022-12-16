@@ -1,7 +1,0 @@
-C:\Users\ricar\Desktop\ConsoleLab2\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.csproj.AssemblyReference.cache
-C:\Users\ricar\Desktop\ConsoleLab2\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\ricar\Desktop\ConsoleLab2\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.AssemblyInfoInputs.cache
-C:\Users\ricar\Desktop\ConsoleLab2\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.AssemblyInfo.cs
-C:\Users\ricar\Desktop\ConsoleLab2\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.csproj.CoreCompileInputs.cache
-C:\Users\ricar\Desktop\ConsoleLab2\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\ricar\Desktop\ConsoleLab2\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.MvcApplicationPartsAssemblyInfo.cache
