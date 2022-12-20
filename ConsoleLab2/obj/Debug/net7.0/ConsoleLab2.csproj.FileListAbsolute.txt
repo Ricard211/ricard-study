@@ -1,0 +1,5 @@
+C:\Users\ricar\Documents\GitHub\ricard-study\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.csproj.AssemblyReference.cache
+C:\Users\ricar\Documents\GitHub\ricard-study\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ricar\Documents\GitHub\ricard-study\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.AssemblyInfoInputs.cache
+C:\Users\ricar\Documents\GitHub\ricard-study\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.AssemblyInfo.cs
+C:\Users\ricar\Documents\GitHub\ricard-study\ConsoleLab2\obj\Debug\net7.0\ConsoleLab2.csproj.CoreCompileInputs.cache
